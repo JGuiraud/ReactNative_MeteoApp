@@ -25,26 +25,12 @@ export default class Result extends React.Component {
         setTimeout(() => this.getWeatherFromApiAsync(), 1000)
     }
 
-    // async getWeatherFromApiAsync() {
-    //     try {
-    //         let response = await fetch('http://api.openweathermap.org/data/2.5/forecast/daily?q=toulouse,fr&mode=json&units=metric&appid=d82ce537f5b61d85d53557bad5a65ae1');
-    //         let responseText = await console.log(response.text());
-    //         console.log(responseText)
-    //         this.setState({ report: responseText })
-    //         // return responoseJson.city;
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
 
     getWeatherFromApiAsync() {
         return fetch('http://api.openweathermap.org/data/2.5/forecast/daily?q=' + this.state.city + '&mode=json&units=metric&appid=d82ce537f5b61d85d53557bad5a65ae1')
             .then((response) => response.json())
             .then((responseText) => {
                 this.setState({ report: responseText })
-                // console.log(responseText);
-                // return responseJson.city;
-                // console.log(('yo'))
             })
             .catch((error) => {
                 console.log(error);

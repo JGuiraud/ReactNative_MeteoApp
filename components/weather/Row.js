@@ -55,7 +55,7 @@ export default class Row extends React.Component {
                         < Text style={{ color: 'white' }} > {this.day()} {this.date()}</Text>
                         {this.icon(90)}
                     </View>
-                    <Text style={[style.temp, { fontSize: 40 }]}>{Math.round(this.props.day.temp.day)}°C</Text>
+                    <Text style={[style.temp, { fontSize: 50 }]}>{Math.round(this.props.day.temp.day)}°C</Text>
                 </View >
             )
         } else {
