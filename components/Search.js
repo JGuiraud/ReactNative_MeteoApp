@@ -1,7 +1,10 @@
 import React from 'react';
-import { Viex, TextInput, Image } from 'react-native';
+import { View, TextInput, Image, Button, Text } from 'react-native';
+import style from '../Style.js';
+import { StackNavigator } from 'react-navigation';
 
-export default class Search extends React.Component {
+class Search extends React.Component {
+
     constructor(props) {
         super(props)
         this.state = {
@@ -10,6 +13,7 @@ export default class Search extends React.Component {
     }
 
     static navigationOptions = {
+        title: 'Rechercher une ville',
         tabBarIcon: () => {
             return <Image source={require('./icons/home.png')} style={{ width: 30, height: 30 }} />
         }
@@ -19,13 +23,27 @@ export default class Search extends React.Component {
         this.setState({ city })
     }
 
+    submit() {
+        console.log(this.props.navigation.navigate('Result', { city: this.state.city }));
+    }
+
     render() {
         return (
-            <TextInput
-                style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-                value={this.state.city}
-                onChangeText={(text) => this.setCity(text)}
-                />
+            <View style={style.container}>
+                <Text style={style.title}>Quel temps fait-il à : </Text>
+                <TextInput
+                    style={style.input}
+                    value={this.state.city}
+                    onChangeText={(text) => this.setCity(text)}
+                    />
+                <Button color={style.color} onPress={() => this.submit()} title="Rechercher" />
+                <Text placeholder="test"></Text>
+            </View>
         )
     }
 }
+
+export default StackNavigator({
+    Search: { screen: Search },
+    Result: { screen: Search }
+})
