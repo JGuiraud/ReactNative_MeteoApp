@@ -25,14 +25,3 @@ export default class About extends React.Component {
         );
     }
 }
-
-// const style = StyleSheet.create({
-//     style: {
-//         margin: 20,
-//     },
-//     title: {
-//         fontSize: 22,
-//         marginBottom: 20,
-//         marginTop: 20
-//     }
-// })

@@ -1,7 +1,9 @@
 import { StyleSheet } from 'react-native';
 
+const green = '#3BB8A2';
+
 export default {
-    color: '#3BB8A2',
+    color: green,
     container: {
         margin: 20
     },
@@ -19,5 +21,12 @@ export default {
         borderWidth: 1,
         marginBottom: 30,
         paddingHorizontal: 10
+    },
+    header: {
+        backgroundColor: green,
+    },
+    headerTitle: {
+        color: 'white',
+        fontSize: 22
     }
 }

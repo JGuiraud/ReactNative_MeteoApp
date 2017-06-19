@@ -2,6 +2,7 @@ import React from 'react';
 import { View, TextInput, Image, Button, Text } from 'react-native';
 import style from '../Style.js';
 import { StackNavigator } from 'react-navigation';
+import Result from './Result'
 
 class Search extends React.Component {
 
@@ -43,7 +44,12 @@ class Search extends React.Component {
     }
 }
 
+const navigationOptions = {
+    headerStyle: style.header,
+    headerTitleStyle: style.headerTitle
+}
+
 export default StackNavigator({
-    Search: { screen: Search },
-    Result: { screen: Search }
+    Search: { screen: Search, navigationOptions },
+    Result: { screen: Result, navigationOptions },
 })
