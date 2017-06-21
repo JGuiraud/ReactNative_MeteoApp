@@ -23,6 +23,12 @@ var _Style = require('../../Style');
 
 var _Style2 = babelHelpers.interopRequireDefault(_Style);
 
+var _ResultDetailed = require('../ResultDetailed');
+
+var _ResultDetailed2 = babelHelpers.interopRequireDefault(_ResultDetailed);
+
+var _reactNavigation = require('react-navigation');
+
 _moment2.default.locale('fr');
 
 var Row = (_temp = _class = function (_React$Component) {
@@ -41,7 +47,7 @@ var Row = (_temp = _class = function (_React$Component) {
                 _reactNative.Text,
                 { style: [style.white, style.bold], __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 19
+                        lineNumber: 24
                     }
                 },
                 day.toUpperCase()
@@ -55,7 +61,7 @@ var Row = (_temp = _class = function (_React$Component) {
                 _reactNative.Text,
                 { style: [style.bold], __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 26
+                        lineNumber: 31
                     }
                 },
                 day
@@ -68,7 +74,6 @@ var Row = (_temp = _class = function (_React$Component) {
 
             var type = this.props.day.weather[0].main.toLowerCase();
             var image = void 0;
-            console.log(type);
             switch (type) {
                 case 'clear':
                     image = require('./icons/sun.png');
@@ -82,92 +87,186 @@ var Row = (_temp = _class = function (_React$Component) {
             }
             return _react2.default.createElement(_reactNative.Image, { source: image, style: { width: size, height: size }, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 45
+                    lineNumber: 49
+                }
+            });
+        }
+    }, {
+        key: 'details',
+        value: function details() {
+            console.log(this.props);
+            return _react2.default.createElement(_ResultDetailed2.default, {
+                __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 55
                 }
             });
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             if (this.props.index === 0) {
                 return _react2.default.createElement(
-                    _reactNative.View,
-                    { style: [style.view, style.firstView], __source: {
+                    _reactNative.TouchableOpacity,
+                    { onPress: function onPress() {
+                            return _this2.details();
+                        }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 53
+                            lineNumber: 65
                         }
                     },
                     _react2.default.createElement(
                         _reactNative.View,
-                        {
-                            __source: {
+                        { style: [style.view, style.firstView], __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 54
+                                lineNumber: 66
                             }
                         },
                         _react2.default.createElement(
-                            _reactNative.Text,
-                            { style: { color: 'white' }, __source: {
+                            _reactNative.View,
+                            {
+                                __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 55
+                                    lineNumber: 67
                                 }
                             },
-                            ' ',
-                            this.day(),
-                            ' ',
-                            this.date()
+                            _react2.default.createElement(
+                                _reactNative.Text,
+                                { style: { color: 'white' }, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 68
+                                    }
+                                },
+                                ' ',
+                                this.day(),
+                                ' ',
+                                this.date()
+                            ),
+                            this.icon(90)
                         ),
-                        this.icon(90)
-                    ),
-                    _react2.default.createElement(
-                        _reactNative.Text,
-                        { style: [style.temp, { fontSize: 50 }], __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 58
-                            }
-                        },
-                        Math.round(this.props.day.temp.day),
-                        '\xB0C'
+                        _react2.default.createElement(
+                            _reactNative.Text,
+                            { style: [style.temp, { fontSize: 50 }], __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 71
+                                }
+                            },
+                            Math.round(this.props.day.temp.day),
+                            '\xB0C'
+                        ),
+                        _react2.default.createElement(
+                            _reactNative.View,
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 72
+                                }
+                            },
+                            _react2.default.createElement(
+                                _reactNative.Text,
+                                { style: [style.temp, { fontSize: 15 }], __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 73
+                                    }
+                                },
+                                'min ',
+                                Math.round(this.props.day.temp.min),
+                                '\xB0C'
+                            ),
+                            _react2.default.createElement(
+                                _reactNative.Text,
+                                { style: [style.temp, { fontSize: 15 }], __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 74
+                                    }
+                                },
+                                'max ',
+                                Math.round(this.props.day.temp.max),
+                                '\xB0C'
+                            ),
+                            _react2.default.createElement(
+                                _reactNative.Text,
+                                { style: [style.temp, { fontSize: 15 }], __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 75
+                                    }
+                                },
+                                this.props.day.pressure,
+                                ' psi'
+                            ),
+                            _react2.default.createElement(
+                                _reactNative.Text,
+                                { style: [style.temp, { fontSize: 15 }], __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 76
+                                    }
+                                },
+                                this.props.day.humidity,
+                                '% humidit\xE9.'
+                            ),
+                            _react2.default.createElement(
+                                _reactNative.Text,
+                                { style: [style.temp, { fontSize: 15 }], __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 77
+                                    }
+                                },
+                                this.props.day.speed,
+                                ' km/h'
+                            )
+                        )
                     )
                 );
             } else {
                 return _react2.default.createElement(
-                    _reactNative.View,
-                    { style: style.view, __source: {
+                    _reactNative.TouchableOpacity,
+                    { onPress: function onPress() {
+                            return _this2.details();
+                        }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 63
+                            lineNumber: 84
                         }
                     },
                     _react2.default.createElement(
                         _reactNative.View,
-                        { style: style.flex, __source: {
+                        { style: style.view, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 64
+                                lineNumber: 85
                             }
                         },
-                        this.icon(),
                         _react2.default.createElement(
-                            _reactNative.Text,
-                            { style: { marginLeft: 10 }, __source: {
+                            _reactNative.View,
+                            { style: style.flex, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 66
+                                    lineNumber: 86
                                 }
                             },
-                            ' ',
-                            this.day(),
-                            ' ',
-                            this.date()
+                            this.icon(),
+                            _react2.default.createElement(
+                                _reactNative.Text,
+                                { style: { marginLeft: 10 }, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 88
+                                    }
+                                },
+                                ' ',
+                                this.day(),
+                                ' ',
+                                this.date()
+                            )
+                        ),
+                        _react2.default.createElement(
+                            _reactNative.Text,
+                            { style: style.temp, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 90
+                                }
+                            },
+                            Math.round(this.props.day.temp.day),
+                            '\xB0C'
                         )
-                    ),
-                    _react2.default.createElement(
-                        _reactNative.Text,
-                        { style: style.temp, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 68
-                            }
-                        },
-                        Math.round(this.props.day.temp.day),
-                        '\xB0C'
                     )
                 );
             }
@@ -203,7 +302,7 @@ var style = _reactNative.StyleSheet.create({
         backgroundColor: _Style2.default.color,
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderBottomColor: '#3583a8',
+        borderBottomColor: '#35a894',
         paddingHorizontal: 20,
         paddingVertical: 10,
         flex: 1,

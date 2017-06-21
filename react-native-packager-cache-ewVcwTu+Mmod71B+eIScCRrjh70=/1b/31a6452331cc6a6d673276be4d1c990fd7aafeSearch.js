@@ -22,6 +22,10 @@ var _Result = require('./Result');
 
 var _Result2 = babelHelpers.interopRequireDefault(_Result);
 
+var _ResultDetailed = require('./ResultDetailed');
+
+var _ResultDetailed2 = babelHelpers.interopRequireDefault(_ResultDetailed);
+
 var Search = (_temp = _class = function (_React$Component) {
     babelHelpers.inherits(Search, _React$Component);
 
@@ -44,7 +48,7 @@ var Search = (_temp = _class = function (_React$Component) {
     }, {
         key: 'submit',
         value: function submit() {
-            console.log(this.props.navigation.navigate('Result', { city: this.state.city }));
+            this.props.navigation.navigate('Result', { city: this.state.city });
         }
     }, {
         key: 'render',
@@ -52,44 +56,59 @@ var Search = (_temp = _class = function (_React$Component) {
             var _this2 = this;
 
             return _react2.default.createElement(
-                _reactNative.View,
-                { style: _Style2.default.container, __source: {
+                _reactNative.Image,
+                { source: require('./images/landscape.jpg'), style: _Style2.default.containerGeneral, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 33
+                        lineNumber: 34
                     }
                 },
                 _react2.default.createElement(
-                    _reactNative.Text,
-                    { style: _Style2.default.title, __source: {
+                    _reactNative.View,
+                    { style: _Style2.default.container, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 34
+                            lineNumber: 35
                         }
                     },
-                    'Quel temps fait-il \xE0 : '
-                ),
-                _react2.default.createElement(_reactNative.TextInput, {
-                    style: _Style2.default.input,
-                    value: this.state.city,
-                    onChangeText: function onChangeText(text) {
-                        return _this2.setCity(text);
-                    },
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 35
-                    }
-                }),
-                _react2.default.createElement(_reactNative.Button, { color: _Style2.default.color, onPress: function onPress() {
-                        return _this2.submit();
-                    }, title: 'Rechercher', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 40
-                    }
-                }),
-                _react2.default.createElement(_reactNative.Text, { placeholder: 'test', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 41
-                    }
-                })
+                    _react2.default.createElement(
+                        _reactNative.Text,
+                        { style: _Style2.default.title, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 36
+                            }
+                        },
+                        'Quel temps fait-il \xE0 : '
+                    ),
+                    _react2.default.createElement(_reactNative.TextInput, {
+                        style: _Style2.default.input,
+                        value: this.state.city,
+                        onChangeText: function onChangeText(text) {
+                            return _this2.setCity(text);
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 37
+                        }
+                    }),
+                    _react2.default.createElement(
+                        _reactNative.TouchableOpacity,
+                        { onPress: function onPress() {
+                                return _this2.submit();
+                            }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 43
+                            }
+                        },
+                        _react2.default.createElement(
+                            _reactNative.Text,
+                            { style: _Style2.default.button, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 44
+                                }
+                            },
+                            'Rechercher'
+                        )
+                    )
+                )
             );
         }
     }]);
@@ -97,9 +116,9 @@ var Search = (_temp = _class = function (_React$Component) {
 }(_react2.default.Component), _class.navigationOptions = {
     title: 'Rechercher une ville',
     tabBarIcon: function tabBarIcon() {
-        return _react2.default.createElement(_reactNative.Image, { source: require('./icons/home.png'), style: { width: 30, height: 30 }, __source: {
+        return _react2.default.createElement(_reactNative.Image, { source: require('./icons/search.png'), style: { width: 30, height: 30 }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 19
+                lineNumber: 20
             }
         });
     }

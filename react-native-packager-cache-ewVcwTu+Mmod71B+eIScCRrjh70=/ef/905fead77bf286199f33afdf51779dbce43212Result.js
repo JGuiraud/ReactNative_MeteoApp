@@ -21,6 +21,12 @@ var _Row = require('./weather/Row');
 
 var _Row2 = babelHelpers.interopRequireDefault(_Row);
 
+var _reactNavigation = require('react-navigation');
+
+var _ResultDetailed = require('./ResultDetailed');
+
+var _ResultDetailed2 = babelHelpers.interopRequireDefault(_ResultDetailed);
+
 var Result = (_temp = _class = function (_React$Component) {
     babelHelpers.inherits(Result, _React$Component);
 
@@ -31,7 +37,10 @@ var Result = (_temp = _class = function (_React$Component) {
 
         _this.state = {
             city: _this.props.navigation.state.params.city,
-            report: null
+            report: null,
+            dataSource: new _reactNative.ListView.DataSource({ rowHasChanged: function rowHasChanged(r1, r2) {
+                    return r1 !== r2;
+                } })
         };
         setTimeout(function () {
             return _this.getWeatherFromApiAsync();
@@ -40,11 +49,16 @@ var Result = (_temp = _class = function (_React$Component) {
     }
 
     babelHelpers.createClass(Result, [{
+        key: 'details',
+        value: function details() {
+            navigate('ResultDetailed');
+        }
+    }, {
         key: 'getWeatherFromApiAsync',
         value: function getWeatherFromApiAsync() {
             var _this2 = this;
 
-            return fetch('http://api.openweathermap.org/data/2.5/forecast/daily?q=' + this.state.city + '&mode=json&units=metric&appid=d82ce537f5b61d85d53557bad5a65ae1').then(function (response) {
+            return fetch('http://api.openweathermap.org/data/2.5/forecast/daily?q=' + this.state.city + '&mode=json&units=metric&appid=d82ce537f5b61d85d53557bad5a65ae1&cnt=16').then(function (response) {
                 return response.json();
             }).then(function (responseText) {
                 _this2.setState({ report: responseText });
@@ -60,31 +74,38 @@ var Result = (_temp = _class = function (_React$Component) {
                     _reactNative.View,
                     { style: { flex: 1, justifyContent: 'center', alignItems: 'center' }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 44
+                            lineNumber: 52
                         }
                     },
                     _react2.default.createElement(_reactNative.ActivityIndicator, { color: _Style2.default.color, size: 'large', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 45
+                            lineNumber: 53
                         }
-                    })
+                    }),
+                    _react2.default.createElement(
+                        _reactNative.Text,
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 54
+                            }
+                        },
+                        'Chargement...'
+                    )
                 );
             } else {
-                var ds = new _reactNative.ListView.DataSource({ rowHasChanged: function rowHasChanged(r1, r2) {
-                        return r1 !== r2;
-                    } });
                 return _react2.default.createElement(_reactNative.ListView, {
-                    dataSource: ds.cloneWithRows(this.state.report.list),
+                    dataSource: this.state.dataSource.cloneWithRows(this.state.report.list),
                     renderRow: function renderRow(row, j, k) {
                         return _react2.default.createElement(_Row2.default, { day: row, index: parseInt(k, 10), __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 54
+                                lineNumber: 61
                             }
                         });
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 52
+                        lineNumber: 59
                     }
                 });
             }
@@ -95,11 +116,11 @@ var Result = (_temp = _class = function (_React$Component) {
     var navigation = _ref.navigation;
 
     return {
-        title: 'M\xE9t\xE9o \xE0 ' + navigation.state.params.city,
+        title: 'M\xE9t\xE9o ' + navigation.state.params.city + ' | 16j',
         tabBarIcon: function tabBarIcon() {
-            return _react2.default.createElement(_reactNative.Image, { source: require('./icons/home.png'), style: { width: 30, height: 30 }, __source: {
+            return _react2.default.createElement(_reactNative.Image, { source: require('./icons/search.png'), style: { width: 30, height: 30 }, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 12
+                    lineNumber: 15
                 }
             });
         }

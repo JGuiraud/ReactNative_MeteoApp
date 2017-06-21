@@ -18,10 +18,15 @@ var _Search = require('./components/Search');
 
 var _Search2 = babelHelpers.interopRequireDefault(_Search);
 
+var _ResultDetailed = require('./components/ResultDetailed');
+
+var _ResultDetailed2 = babelHelpers.interopRequireDefault(_ResultDetailed);
+
 var _reactNavigation = require('react-navigation');
 
 var Tabs = (0, _reactNavigation.TabNavigator)({
   Search: { screen: _Search2.default },
+  ResultDetailed: { screen: _ResultDetailed2.default },
   About: { screen: _About2.default }
 }, {
   tabBarPosition: 'bottom',
@@ -34,9 +39,7 @@ var Tabs = (0, _reactNavigation.TabNavigator)({
       fontSize: 20
     },
     style: {
-      backgroundColor: '#3BB8A2',
-      borderTopWidth: 1,
-      borderColor: '#3BB8A2'
+      backgroundColor: '#3BB8A2'
     }
   }
 });
@@ -56,18 +59,18 @@ var App = function (_React$Component) {
         _reactNative.View,
         { style: { flex: 1 }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 36
           }
         },
         _react2.default.createElement(_reactNative.StatusBar, { hidden: true, __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 37
           }
         }),
         _react2.default.createElement(Tabs, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 38
           }
         })
       );

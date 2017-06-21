@@ -1,8 +1,10 @@
 import React from 'react';
-import { View, TextInput, Image, Button, Text } from 'react-native';
+import { View, TextInput, Image, Button, Text, TouchableOpacity } from 'react-native';
 import style from '../Style.js';
 import { StackNavigator } from 'react-navigation';
 import Result from './Result'
+import TimeToDestination from './TimeToDestination'
+
 
 class Search extends React.Component {
 
@@ -16,7 +18,7 @@ class Search extends React.Component {
     static navigationOptions = {
         title: 'Rechercher une ville',
         tabBarIcon: () => {
-            return <Image source={require('./icons/home.png')} style={{ width: 30, height: 30 }} />
+            return <Image source={require('./icons/search.png')} style={{ width: 30, height: 30 }} />
         }
     }
 
@@ -25,21 +27,27 @@ class Search extends React.Component {
     }
 
     submit() {
-        console.log(this.props.navigation.navigate('Result', { city: this.state.city }));
+        this.props.navigation.navigate('Result', { city: this.state.city });
     }
 
     render() {
         return (
-            <View style={style.container}>
-                <Text style={style.title}>Quel temps fait-il à : </Text>
-                <TextInput
-                    style={style.input}
-                    value={this.state.city}
-                    onChangeText={(text) => this.setCity(text)}
-                    />
-                <Button color={style.color} onPress={() => this.submit()} title="Rechercher" />
-                <Text placeholder="test"></Text>
-            </View>
+            <Image source={require('./images/landscape.jpg')} style={style.containerGeneral}>
+                <View style={style.container}>
+                    <Text style={style.title}>Quel temps fait-il à : </Text>
+                    <TextInput
+                        style={style.input}
+                        value={this.state.city}
+                        onChangeText={(text) => this.setCity(text)}
+                        />
+                    {/*<Button color={style.color} onPress={() => this.submit()} title="Rechercher" />*/}
+                    <TouchableOpacity onPress={() => this.submit()}>
+                        <Text style={style.button}>
+                            Rechercher
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+            </Image>
         )
     }
 }
@@ -52,4 +60,5 @@ const navigationOptions = {
 export default StackNavigator({
     Search: { screen: Search, navigationOptions },
     Result: { screen: Result, navigationOptions },
+    // ResultDetailed: { screen: ResultDetailed, navigationOptions },
 })

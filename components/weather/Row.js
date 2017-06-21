@@ -1,8 +1,13 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import moment from 'moment'
 import 'moment/locale/fr'
 import globalStyle from '../../Style'
+import TimeToDestination from '../TimeToDestination'
+import { StackNavigator } from 'react-navigation';
+// import renderIf from 'react-render-if';
+
+
 
 moment.locale('fr')
 
@@ -30,7 +35,6 @@ export default class Row extends React.Component {
     icon(size = 60) {
         const type = this.props.day.weather[0].main.toLowerCase()
         let image
-        console.log(type)
         switch (type) {
             case 'clear':
                 image = require('./icons/sun.png')
@@ -43,34 +47,52 @@ export default class Row extends React.Component {
                 break;
         }
         return <Image source={image} style={{ width: size, height: size }} />
-        // return <Text> {type} </Text>
+    }
+
+    details() {
+        console.log(this.props);
+        return (
+            <TimeToDestination />
+        )
     }
 
 
     render() {
         if (this.props.index === 0) {
             return (
-                <View style={[style.view, style.firstView]}>
-                    <View>
-                        < Text style={{ color: 'white' }} > {this.day()} {this.date()}</Text>
-                        {this.icon(90)}
-                    </View>
-                    <Text style={[style.temp, { fontSize: 50 }]}>{Math.round(this.props.day.temp.day)}°C</Text>
-                </View >
+                //     <Text>Test</Text>
+                // <Button onPress={() => this.test()}> test  </Button>
+                <TouchableOpacity onPress={() => this.details()}>
+                    <View style={[style.view, style.firstView]}>
+                        <View >
+                            < Text style={{ color: 'white' }} > {this.day()} {this.date()}</Text>
+                            {this.icon(90)}
+                        </View>
+                        <Text style={[style.temp, { fontSize: 50 }]}>{Math.round(this.props.day.temp.day)}°C</Text>
+                        <View>
+                            <Text style={[style.temp, { fontSize: 15 }]}>min {Math.round(this.props.day.temp.min)}°C</Text>
+                            <Text style={[style.temp, { fontSize: 15 }]}>max {Math.round(this.props.day.temp.max)}°C</Text>
+                            <Text style={[style.temp, { fontSize: 15 }]}>{this.props.day.pressure} psi</Text>
+                            <Text style={[style.temp, { fontSize: 15 }]}>{this.props.day.humidity}% humidité.</Text>
+                            <Text style={[style.temp, { fontSize: 15 }]}>{this.props.day.speed} km/h</Text>
+                        </View>
+                    </View >
+                </TouchableOpacity>
             )
         } else {
             return (
-                <View style={style.view}>
-                    <View style={style.flex}>
-                        {this.icon()}
-                        < Text style={{ marginLeft: 10 }} > {this.day()} {this.date()}</Text>
-                    </View>
-                    <Text style={style.temp}>{Math.round(this.props.day.temp.day)}°C</Text>
-                </View >
+                <TouchableOpacity onPress={() => this.details()}>
+                    <View style={style.view}>
+                        <View style={style.flex}>
+                            {this.icon()}
+                            < Text style={{ marginLeft: 10 }} > {this.day()} {this.date()}</Text>
+                        </View>
+                        <Text style={style.temp}>{Math.round(this.props.day.temp.day)}°C</Text>
+                    </View >
+                </TouchableOpacity>
             )
         }
     }
-
 }
 
 const style = StyleSheet.create({
@@ -96,7 +118,7 @@ const style = StyleSheet.create({
         backgroundColor: globalStyle.color,
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderBottomColor: '#3583a8',
+        borderBottomColor: '#35a894',
         paddingHorizontal: 20,
         paddingVertical: 10,
         flex: 1,
