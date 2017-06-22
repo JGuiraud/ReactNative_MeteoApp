@@ -21,7 +21,9 @@ export default class ResultGoogle extends React.Component {
         super(props)
         this.state = {
             depart: this.props.navigation.state.params.depart,
-            destination: this.props.navigation.state.params.destination
+            destination: this.props.navigation.state.params.destination,
+            selectedlocomotion: this.props.navigation.state.params.selectedlocomotion,
+
         }
     }
 

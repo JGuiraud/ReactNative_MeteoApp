@@ -13,7 +13,7 @@ class TimeToDestination extends React.Component {
         this.state = {
             depart: "",
             destination: "",
-            locomotions: [{id: 1, label:"Voiture", loco:"driving"},{id: 2, label:"Vélo", loco:"biking"},{id: 3, label:"À pied", loco:"walking"}],
+            locomotions: [{ id: 1, label: "Voiture", loco: "driving" }, { id: 2, label: "Vélo", loco: "biking" }, { id: 3, label: "À pied", loco: "walking" }],
             selectedlocomotion: "driving"
         }
     }
@@ -51,7 +51,7 @@ class TimeToDestination extends React.Component {
     }
 
     render() {
-        let picker = this.state.locomotions.map((data) => <Picker.Item key={data.id} label={data.label} value={data.loco} /> )
+        let picker = this.state.locomotions.map((data) => <Picker.Item key={data.id} label={data.label} value={data.loco} />)
         return (
             <Image source={require('./images/roadback.jpg')} style={style.containerGeneral}>
                 <View style={style.container}>
@@ -68,12 +68,12 @@ class TimeToDestination extends React.Component {
                         style={style.input}
                         value={this.state.destination}
                         onChangeText={(text) => this.setDestination(text)}
-                    />
+                        />
 
                     <Picker
                         selectedValue={(this.state.selectedlocomotion)}
-                        onValueChange={(itemValue) => this.setLocomotion(itemValue)}>
-                            {picker}
+                        onValueChange={(itemValue) => this.setState({ selectedlocomotion: itemValue })}>
+                        {picker}
                     </Picker>
 
                     <TouchableOpacity onPress={() => this.submit()}>
