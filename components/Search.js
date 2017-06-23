@@ -18,7 +18,7 @@ class Search extends React.Component {
     static navigationOptions = {
         title: 'Rechercher une ville',
         tabBarIcon: () => {
-            return <Image source={require('./icons/search.png')} style={{ width: 30, height: 30 }} />
+            return <Image source={require('./icons/weather.png')} style={{ width: 30, height: 30 }} />
         }
     }
 

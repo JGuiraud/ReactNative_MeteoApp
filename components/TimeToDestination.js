@@ -22,7 +22,7 @@ class TimeToDestination extends React.Component {
         return {
             title: `Traffic routier`,
             tabBarIcon: () => {
-                return <Image source={require('./icons/home.png')} style={{ width: 30, height: 30 }} />
+                return <Image source={require('./icons/sign.png')} style={{ width: 30, height: 30 }} />
             }
         }
     }

@@ -10,7 +10,7 @@ export default class ResultGoogle extends React.Component {
         return {
             title: `Trafic entre machin et bidule`,
             tabBarIcon: () => {
-                return <Image source={require('./icons/home.png')} style={{ width: 30, height: 30 }} />
+                return <Image source={require('./icons/sign.png')} style={{ width: 30, height: 30 }} />
             }
         }
     }
