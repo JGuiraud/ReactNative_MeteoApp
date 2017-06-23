@@ -18,25 +18,31 @@ var _Search = require('./components/Search');
 
 var _Search2 = babelHelpers.interopRequireDefault(_Search);
 
-var _ResultDetailed = require('./components/ResultDetailed');
+var _TimeToDestination = require('./components/TimeToDestination');
 
-var _ResultDetailed2 = babelHelpers.interopRequireDefault(_ResultDetailed);
+var _TimeToDestination2 = babelHelpers.interopRequireDefault(_TimeToDestination);
 
 var _reactNavigation = require('react-navigation');
 
 var Tabs = (0, _reactNavigation.TabNavigator)({
   Search: { screen: _Search2.default },
-  ResultDetailed: { screen: _ResultDetailed2.default },
+  TimeToDestination: { screen: _TimeToDestination2.default },
   About: { screen: _About2.default }
 }, {
   tabBarPosition: 'bottom',
   tabBarOptions: {
+    showIcon: true,
     showLabel: false,
+    iconStyle: {
+      width: 40,
+      height: 30
+    },
     activeTintColor: 'white',
     inactiveTintColor: 'black',
     activeBackgroundColor: '#35a894',
-    labelStyle: {
-      fontSize: 20
+
+    indicatorStyle: {
+      backgroundColor: '#3583a8'
     },
     style: {
       backgroundColor: '#3BB8A2'
@@ -59,18 +65,18 @@ var App = function (_React$Component) {
         _reactNative.View,
         { style: { flex: 1 }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 44
           }
         },
         _react2.default.createElement(_reactNative.StatusBar, { hidden: true, __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 45
           }
         }),
         _react2.default.createElement(Tabs, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 46
           }
         })
       );

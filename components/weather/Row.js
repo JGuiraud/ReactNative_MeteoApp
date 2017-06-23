@@ -50,7 +50,7 @@ export default class Row extends React.Component {
     }
 
     details() {
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <TimeToDestination />
         )

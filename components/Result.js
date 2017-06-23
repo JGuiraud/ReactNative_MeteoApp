@@ -31,10 +31,6 @@ export default class Result extends React.Component {
 
     details() {
         navigate('ResultDetailed')
-        // console.log(this.props);
-        // return(
-        //     <ResultDetailed />
-        // )
     }
 
     getWeatherFromApiAsync() {
@@ -42,6 +38,7 @@ export default class Result extends React.Component {
             .then((response) => response.json())
             .then((responseText) => {
                 this.setState({ report: responseText })
+                console.log(this.state.report.list)
             })
             .catch((error) => {
                 console.log(error);

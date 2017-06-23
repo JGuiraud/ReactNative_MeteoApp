@@ -22,9 +22,9 @@ var _Result = require('./Result');
 
 var _Result2 = babelHelpers.interopRequireDefault(_Result);
 
-var _ResultDetailed = require('./ResultDetailed');
+var _TimeToDestination = require('./TimeToDestination');
 
-var _ResultDetailed2 = babelHelpers.interopRequireDefault(_ResultDetailed);
+var _TimeToDestination2 = babelHelpers.interopRequireDefault(_TimeToDestination);
 
 var Search = (_temp = _class = function (_React$Component) {
     babelHelpers.inherits(Search, _React$Component);
@@ -59,21 +59,21 @@ var Search = (_temp = _class = function (_React$Component) {
                 _reactNative.Image,
                 { source: require('./images/landscape.jpg'), style: _Style2.default.containerGeneral, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 34
+                        lineNumber: 35
                     }
                 },
                 _react2.default.createElement(
                     _reactNative.View,
                     { style: _Style2.default.container, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 35
+                            lineNumber: 36
                         }
                     },
                     _react2.default.createElement(
                         _reactNative.Text,
                         { style: _Style2.default.title, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 36
+                                lineNumber: 37
                             }
                         },
                         'Quel temps fait-il \xE0 : '
@@ -86,7 +86,7 @@ var Search = (_temp = _class = function (_React$Component) {
                         },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 37
+                            lineNumber: 38
                         }
                     }),
                     _react2.default.createElement(
@@ -95,14 +95,14 @@ var Search = (_temp = _class = function (_React$Component) {
                                 return _this2.submit();
                             }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 43
+                                lineNumber: 44
                             }
                         },
                         _react2.default.createElement(
                             _reactNative.Text,
                             { style: _Style2.default.button, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 44
+                                    lineNumber: 45
                                 }
                             },
                             'Rechercher'
@@ -118,7 +118,7 @@ var Search = (_temp = _class = function (_React$Component) {
     tabBarIcon: function tabBarIcon() {
         return _react2.default.createElement(_reactNative.Image, { source: require('./icons/search.png'), style: { width: 30, height: 30 }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 20
+                lineNumber: 21
             }
         });
     }

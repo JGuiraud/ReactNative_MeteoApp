@@ -23,10 +23,6 @@ var _Row2 = babelHelpers.interopRequireDefault(_Row);
 
 var _reactNavigation = require('react-navigation');
 
-var _ResultDetailed = require('./ResultDetailed');
-
-var _ResultDetailed2 = babelHelpers.interopRequireDefault(_ResultDetailed);
-
 var Result = (_temp = _class = function (_React$Component) {
     babelHelpers.inherits(Result, _React$Component);
 
@@ -74,12 +70,12 @@ var Result = (_temp = _class = function (_React$Component) {
                     _reactNative.View,
                     { style: { flex: 1, justifyContent: 'center', alignItems: 'center' }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 52
+                            lineNumber: 50
                         }
                     },
                     _react2.default.createElement(_reactNative.ActivityIndicator, { color: _Style2.default.color, size: 'large', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 53
+                            lineNumber: 51
                         }
                     }),
                     _react2.default.createElement(
@@ -87,7 +83,7 @@ var Result = (_temp = _class = function (_React$Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 54
+                                lineNumber: 52
                             }
                         },
                         'Chargement...'
@@ -99,13 +95,13 @@ var Result = (_temp = _class = function (_React$Component) {
                     renderRow: function renderRow(row, j, k) {
                         return _react2.default.createElement(_Row2.default, { day: row, index: parseInt(k, 10), __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 61
+                                lineNumber: 59
                             }
                         });
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 59
+                        lineNumber: 57
                     }
                 });
             }
@@ -120,7 +116,7 @@ var Result = (_temp = _class = function (_React$Component) {
         tabBarIcon: function tabBarIcon() {
             return _react2.default.createElement(_reactNative.Image, { source: require('./icons/search.png'), style: { width: 30, height: 30 }, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 15
+                    lineNumber: 17
                 }
             });
         }

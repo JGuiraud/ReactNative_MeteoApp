@@ -26,22 +26,28 @@ exports.default = {
         fontSize: 24,
         marginBottom: 20,
         marginTop: 20,
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        fontWeight: 'bold'
     },
     input: {
         height: 40,
         borderColor: 'transparent',
-        backgroundColor: 'rgba(255, 255, 255, .5)',
+        backgroundColor: 'rgba(255, 255, 255, .7)',
         borderWidth: 1,
         marginBottom: 30,
         paddingHorizontal: 10
     },
+
     button: {
         textAlign: 'center',
-        backgroundColor: 'transparent',
-        fontSize: 22,
-        color: green,
-        fontWeight: 'bold'
+        backgroundColor: green,
+        fontSize: 18,
+        height: 40,
+        color: 'white',
+        fontWeight: 'bold',
+        paddingTop: 6,
+        marginRight: 50,
+        marginLeft: 50
     },
     header: {
         backgroundColor: green

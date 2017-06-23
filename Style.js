@@ -11,12 +11,42 @@ export default {
         width: null,
         height: null
     },
+    containerGeneral2: {
+        flex: 1,
+        // backgroundColor: 'pink',
+        paddingLeft: 30,
+        paddingRight: 30,
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        width: null,
+        height: null
+    },
     container: {
         padding: 30,
         width: '100 %',
     },
     text: {
         fontSize: 20
+    },
+    containerTraffic: {
+        paddingLeft: 20,
+        paddingRight: 20
+
+    },
+    test: {
+        color: 'red',
+        backgroundColor: 'transparent'
+    },
+    textCentered: {
+        fontSize: 20,
+        textAlign: 'center',
+        padding: 30,
+        // paddingLeft: 30,
+        // paddingRight: 30,
+        backgroundColor: 'rgba(255, 255, 255, .7)',
+        // fontWeight: 'bold'
+        // borderColor: green,
+        // borderWidth: 2,
     },
     title: {
         fontSize: 24,
@@ -33,15 +63,13 @@ export default {
         marginBottom: 30,
         paddingHorizontal: 10
     },
-    // containerButton: {
-    //     flex: 1,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     // height: null,
-    //     // width: null
-    // },
+    picker: {
+        height: 80,
+        backgroundColor: 'rgba(255, 255, 255, .7)',
+        paddingBottom: 15,
+        marginBottom: 15
+    },
     button: {
-        // flex: 1,
         textAlign: 'center',
         backgroundColor: green,
         fontSize: 18,
@@ -51,10 +79,6 @@ export default {
         paddingTop: 6,
         marginRight: 50,
         marginLeft: 50
-        // marging: 10
-        // justifyContent: 'center',
-        // alignItems: 'center'
-        // alignVertical: 'center'
     },
     header: {
         backgroundColor: green,

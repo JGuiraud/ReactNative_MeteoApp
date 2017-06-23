@@ -35,8 +35,8 @@ export default class About extends React.Component {
     //     }
 
 
-    search() {
-        this.props.navigation.navigate('Search');
+    github() {
+        console.log('gitgub')
     }
 
     test() {
@@ -49,9 +49,8 @@ export default class About extends React.Component {
         return (
             <View style={style.container}>
                 <Text style={style.title}>À Propos de l'application</Text>
-                <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint repudiandae nostrum consequatur dolores voluptatum. Obcaecati laboriosam recusandae itaque expedita debitis harum velit quibusdam ullam voluptatibus omnis, veritatis aperiam aliquam dolore voluptates ipsam iure magni!</Text>
-                <Button color={style.color} onPress={() => this.search()} title="Rechercher une ville" />
-                <Button color={style.color} onPress={() => this.test()} title="test" />
+                <Text>Cette application a été développée en quatre jours utilisant la technologie react-native dans le cadre de la formation Développeur Web/Mobile | Simplon Occitanie.</Text>
+                <Button color={style.color} onPress={() => this.github()} title="Github du projet" />
             </View>
 
         );

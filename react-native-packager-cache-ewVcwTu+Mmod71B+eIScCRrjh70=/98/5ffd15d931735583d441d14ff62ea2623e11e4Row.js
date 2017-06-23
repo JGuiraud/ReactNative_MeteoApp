@@ -23,9 +23,9 @@ var _Style = require('../../Style');
 
 var _Style2 = babelHelpers.interopRequireDefault(_Style);
 
-var _ResultDetailed = require('../ResultDetailed');
+var _TimeToDestination = require('../TimeToDestination');
 
-var _ResultDetailed2 = babelHelpers.interopRequireDefault(_ResultDetailed);
+var _TimeToDestination2 = babelHelpers.interopRequireDefault(_TimeToDestination);
 
 var _reactNavigation = require('react-navigation');
 
@@ -95,7 +95,7 @@ var Row = (_temp = _class = function (_React$Component) {
         key: 'details',
         value: function details() {
             console.log(this.props);
-            return _react2.default.createElement(_ResultDetailed2.default, {
+            return _react2.default.createElement(_TimeToDestination2.default, {
                 __source: {
                     fileName: _jsxFileName,
                     lineNumber: 55

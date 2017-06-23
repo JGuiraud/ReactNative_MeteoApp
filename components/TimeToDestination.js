@@ -11,16 +11,16 @@ class TimeToDestination extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            depart: "",
-            destination: "",
-            locomotions: [{ id: 1, label: "Voiture", loco: "driving" }, { id: 2, label: "Vélo", loco: "biking" }, { id: 3, label: "À pied", loco: "walking" }],
+            depart: "Toulouse",
+            destination: "Saint Gaudens",
+            locomotions: [{ id: 1, label: "Voiture", loco: "driving" }, { id: 2, label: "Vélo", loco: "bicycling" }, { id: 3, label: "À pied", loco: "walking" }],
             selectedlocomotion: "driving"
         }
     }
 
     static navigationOptions = ({navigation}) => {
         return {
-            title: `Quel est le trafic ?`,
+            title: `Traffic routier`,
             tabBarIcon: () => {
                 return <Image source={require('./icons/home.png')} style={{ width: 30, height: 30 }} />
             }
@@ -41,8 +41,6 @@ class TimeToDestination extends React.Component {
     }
 
     submit() {
-        // console.log(this.state.locomotion)
-        console.log(this.state.depart + ' | ' + this.state.destination + ' | ' + this.state.locomotion)
         this.props.navigation.navigate('ResultGoogle', {
             depart: this.state.depart,
             selectedlocomotion: this.state.selectedlocomotion,
@@ -53,8 +51,8 @@ class TimeToDestination extends React.Component {
     render() {
         let picker = this.state.locomotions.map((data) => <Picker.Item key={data.id} label={data.label} value={data.loco} />)
         return (
-            <Image source={require('./images/roadback.jpg')} style={style.containerGeneral}>
-                <View style={style.container}>
+            <Image source={require('./images/roadback.jpg')} style={style.containerGeneral2}>
+                <View style={style.container2}>
 
                     <Text style={style.title}>Départ</Text>
                     <TextInput
@@ -62,15 +60,14 @@ class TimeToDestination extends React.Component {
                         value={this.state.depart}
                         onChangeText={(text) => this.setDepart(text)}
                         />
-
                     <Text style={style.title}>Destination</Text>
                     <TextInput
                         style={style.input}
                         value={this.state.destination}
                         onChangeText={(text) => this.setDestination(text)}
                         />
-
                     <Picker
+                        itemStyle={style.picker}
                         selectedValue={(this.state.selectedlocomotion)}
                         onValueChange={(itemValue) => this.setState({ selectedlocomotion: itemValue })}>
                         {picker}
@@ -79,8 +76,7 @@ class TimeToDestination extends React.Component {
                     <TouchableOpacity onPress={() => this.submit()}>
                         <Text style={style.button}>
                             Connaitre le trafic
-                            </Text>
-
+                        </Text>
                     </TouchableOpacity>
                 </View>
             </Image>

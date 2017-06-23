@@ -17,9 +17,9 @@ var _Style = require('../Style.js');
 
 var _Style2 = babelHelpers.interopRequireDefault(_Style);
 
-var _ResultDetailed = require('./ResultDetailed');
+var _TimeToDestination = require('./TimeToDestination');
 
-var _ResultDetailed2 = babelHelpers.interopRequireDefault(_ResultDetailed);
+var _TimeToDestination2 = babelHelpers.interopRequireDefault(_TimeToDestination);
 
 var About = (_temp = _class = function (_React$Component) {
     babelHelpers.inherits(About, _React$Component);
