@@ -14,7 +14,7 @@ export default class Result extends React.Component {
         return {
             title: `Météo ${navigation.state.params.city} | 16j`,
             tabBarIcon: () => {
-                return <Image source={require('./icons/search.png')} style={{ width: 30, height: 30 }} />
+                return <Image source={require('./icons/weather.png')} style={{ width: 30, height: 30 }} />
             }
         }
     }

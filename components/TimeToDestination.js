@@ -11,8 +11,8 @@ class TimeToDestination extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            depart: "Toulouse",
-            destination: "Saint Gaudens",
+            depart: "",
+            destination: "",
             locomotions: [{ id: 1, label: "Voiture", loco: "driving" }, { id: 2, label: "Vélo", loco: "bicycling" }, { id: 3, label: "À pied", loco: "walking" }],
             selectedlocomotion: "driving"
         }
