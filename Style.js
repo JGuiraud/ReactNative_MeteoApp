@@ -13,11 +13,9 @@ export default {
     },
     containerGeneral2: {
         flex: 1,
-        // backgroundColor: 'pink',
         paddingLeft: 30,
         paddingRight: 30,
-        // justifyContent: 'center',
-        // alignItems: 'center',
+
         width: null,
         height: null
     },
@@ -41,12 +39,7 @@ export default {
         fontSize: 20,
         textAlign: 'center',
         padding: 30,
-        // paddingLeft: 30,
-        // paddingRight: 30,
         backgroundColor: 'rgba(255, 255, 255, .7)',
-        // fontWeight: 'bold'
-        // borderColor: green,
-        // borderWidth: 2,
     },
     title: {
         fontSize: 24,

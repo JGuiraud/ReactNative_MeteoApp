@@ -60,5 +60,4 @@ const navigationOptions = {
 export default StackNavigator({
     Search: { screen: Search, navigationOptions },
     Result: { screen: Result, navigationOptions },
-    // ResultDetailed: { screen: ResultDetailed, navigationOptions },
 })

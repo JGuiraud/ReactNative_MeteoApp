@@ -5,9 +5,6 @@ import 'moment/locale/fr'
 import globalStyle from '../../Style'
 import TimeToDestination from '../TimeToDestination'
 import { StackNavigator } from 'react-navigation';
-// import renderIf from 'react-render-if';
-
-
 
 moment.locale('fr')
 
@@ -50,7 +47,6 @@ export default class Row extends React.Component {
     }
 
     details() {
-        // console.log(this.props);
         return (
             <TimeToDestination />
         )
@@ -60,8 +56,7 @@ export default class Row extends React.Component {
     render() {
         if (this.props.index === 0) {
             return (
-                //     <Text>Test</Text>
-                // <Button onPress={() => this.test()}> test  </Button>
+
                 <TouchableOpacity onPress={() => this.details()}>
                     <View style={[style.view, style.firstView]}>
                         <View >
@@ -112,7 +107,6 @@ const style = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        // justifyContent: 'space-around'
     },
     view: {
         backgroundColor: globalStyle.color,
@@ -131,4 +125,4 @@ const style = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 25
     }
-})
+});

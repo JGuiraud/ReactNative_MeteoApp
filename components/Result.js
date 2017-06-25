@@ -3,10 +3,6 @@ import { Text, ActivityIndicator, ListView, Image, View } from 'react-native';
 import style from '../Style'
 import WeatherRow from './weather/Row'
 import { StackNavigator } from 'react-navigation';
-// import TimeToDestination from './TimeToDestination'
-// import ResultGoogle from './ResultGoogle'
-
-
 
 export default class Result extends React.Component {
 

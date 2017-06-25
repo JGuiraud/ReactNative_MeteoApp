@@ -23,16 +23,11 @@ const Tabs = TabNavigator(
       activeTintColor: 'white',
       inactiveTintColor: 'black',
       activeBackgroundColor: '#35a894',
-      // labelStyle: {
-      //   fontSize: 20
-      // },
       indicatorStyle: {
         backgroundColor: '#3583a8'
       },
       style: {
         backgroundColor: '#3BB8A2',
-        // borderTopWidth: 1,
-        // borderColor: '#3BB8A2'
       }
     }
   }
