@@ -67,7 +67,7 @@ export default {
         height: 80,
         backgroundColor: 'rgba(255, 255, 255, .7)',
         paddingBottom: 15,
-        marginBottom: 15
+        marginBottom: 30
     },
     button: {
         textAlign: 'center',

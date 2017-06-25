@@ -4,15 +4,13 @@ import { StackNavigator } from 'react-navigation';
 import style from '../Style.js';
 import ResultGoogle from './ResultGoogle'
 
-
-
 class TimeToDestination extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            depart: "",
-            destination: "",
+            depart: "Toulouse",
+            destination: "Pamiers",
             locomotions: [{ id: 1, label: "Voiture", loco: "driving" }, { id: 2, label: "Vélo", loco: "bicycling" }, { id: 3, label: "À pied", loco: "walking" }],
             selectedlocomotion: "driving"
         }
@@ -26,7 +24,6 @@ class TimeToDestination extends React.Component {
             }
         }
     }
-
 
     setDepart(depart) {
         this.setState({ depart })

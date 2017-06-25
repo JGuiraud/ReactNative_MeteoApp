@@ -8,7 +8,7 @@ export default class ResultGoogle extends React.Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            title: `Trafic entre machin et bidule`,
+            title: `Trajet entre ${navigation.state.params.depart} et ${navigation.state.params.destination}`,
             tabBarIcon: () => {
                 return <Image source={require('./icons/sign.png')} style={{ width: 30, height: 30 }} />
             }
@@ -44,7 +44,6 @@ export default class ResultGoogle extends React.Component {
     }
 
     render() {
-
         if (this.state.report === null) {
             return (
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -66,7 +65,5 @@ export default class ResultGoogle extends React.Component {
                 </Image>
             )
         }
-
     }
-
 }
