@@ -26,10 +26,10 @@ export default class About extends React.Component {
         const url = 'https://github.com/JGuiraud/ReactNative_MeteoApp'
         return (
 
-            <View style={style.container}>
-                <Text style={style.title}>À Propos de l'application</Text>
-                <Text>Cette application a été développée en quatre jours utilisant la technologie react-native dans le cadre de la formation Développeur Web/Mobile | Simplon Occitanie.</Text>
-            </View>
+            <View style={style.aboutBack}>
+                <Text style={style.titleAbout}>À Propos de l'application</Text>
+                <Text style={style.textAbout}>Cette application a été développée en quatre jours utilisant la technologie react-native dans le cadre de la formation Développeur Web/Mobile | Simplon Occitanie.</Text>
+            </View >
 
         );
     }

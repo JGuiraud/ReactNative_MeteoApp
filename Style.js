@@ -6,8 +6,9 @@ export default {
     color: green,
     containerGeneral: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        paddingTop: 100,
         width: null,
         height: null
     },
@@ -79,5 +80,24 @@ export default {
     headerTitle: {
         color: 'white',
         fontSize: 22
+    },
+    aboutBack: {
+        backgroundColor: green,
+        padding: 30,
+        width: '100 %',
+        height: '100 %',
+    },
+    titleAbout: {
+        fontSize: 24,
+        marginBottom: 20,
+        marginTop: 20,
+        backgroundColor: 'transparent',
+        fontWeight: 'bold',
+        color: 'white'
+    },
+    textAbout: {
+        color: 'white',
+        fontSize: 18,
+        // fontWeight: 'bold',
     }
 }
