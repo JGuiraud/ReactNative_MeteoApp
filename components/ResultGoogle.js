@@ -56,7 +56,7 @@ export default class ResultGoogle extends React.Component {
                 <Image source={require('./images/roadback.jpg')} style={style.containerGeneral}>
                     <View style={style.containerTraffic}>
                         <Text style={style.textCentered}>
-                            <Text style={style.test}>Info Trajet : </Text>
+                            <Text style={style.infoTrajet}>Info Trajet : </Text>
                             Il y a {this.state.distance} entre {this.state.depart} et {this.state.destination}.
                             Il vous faudra {this.state.duration}
                         </Text>

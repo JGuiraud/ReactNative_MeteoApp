@@ -32,9 +32,11 @@ export default {
         paddingRight: 20
 
     },
-    test: {
+    infoTrajet: {
         color: 'red',
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        borderWidth: 2,
+        borderColor: 'red',
     },
     textCentered: {
         fontSize: 20,
