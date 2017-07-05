@@ -37,7 +37,7 @@ export default class Row extends React.Component {
                 image = require('./icons/sun.png')
                 break;
             case 'rain':
-                image = require('./icons/cloudy.png')
+                image = require('./icons/rainy.png')
                 break
             default:
                 image = require('./icons/cloudy.png')
